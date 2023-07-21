@@ -1,4 +1,4 @@
-import { Stack } from "@chakra-ui/react";
+import { List, ListItem, Stack } from "@chakra-ui/react";
 import { Genre } from "../hooks/useGenres";
 import GenreListItem from "./GenreListItem";
 import useData from "../hooks/useData";
@@ -7,11 +7,13 @@ const GenreList = () => {
   const { data } = useData<Genre>("/genres");
 
   return (
-    <Stack>
+    <List>
       {data.map((genre) => (
-        <GenreListItem genre={genre} />
+        <ListItem key={genre.id} paddingY="5px">
+          <GenreListItem genre={genre} />
+        </ListItem>
       ))}
-    </Stack>
+    </List>
   );
 };
 
