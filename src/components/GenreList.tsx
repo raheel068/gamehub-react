@@ -1,4 +1,4 @@
-import { List, ListItem, Spinner, Stack } from "@chakra-ui/react";
+import { List, ListItem, Spinner } from "@chakra-ui/react";
 import { Genre } from "../hooks/useGenres";
 import GenreListItem from "./GenreListItem";
 import useData from "../hooks/useData";
