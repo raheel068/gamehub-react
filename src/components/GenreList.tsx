@@ -5,9 +5,10 @@ import useData from "../hooks/useData";
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
 }
 
-const GenreList = ({ onSelectGenre }: Props) => {
+const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
   const { data, error, isLoading } = useData<Genre>("/genres");
 
   if (error) return null;
@@ -19,6 +20,7 @@ const GenreList = ({ onSelectGenre }: Props) => {
         <ListItem key={genre.id} paddingY="5px">
           <GenreListItem
             genre={genre}
+            selectedGenre={selectedGenre}
             onSelectGenre={(genre) => onSelectGenre(genre)}
           />
         </ListItem>
