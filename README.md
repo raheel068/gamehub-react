@@ -6,4 +6,4 @@ Introducing Game Lab, a cutting-edge video game discovery web app designed to en
 
 
 ## Authors
-- [Raheel Riaz Malik](https://github.com/raheel068)
+[Raheel Riaz Malik](https://github.com/raheel068)
