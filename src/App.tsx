@@ -48,8 +48,22 @@ function App() {
       <GridItem area="main">
         <Box paddingLeft={2}>
           <GameHeading gameQuery={gameQuery} />
-          <Flex marginBottom={5}>
-            <Box marginRight={5}>
+          <Flex
+            flexDirection={{
+              base: "column",
+              md: "row",
+              lg: "row",
+              xl: "row",
+            }}
+            marginBottom={5}
+          >
+            <Box
+              marginRight={5}
+              marginBottom={{
+                base: 2,
+                md: 0,
+              }}
+            >
               <PlatformSelector
                 selectedPlatform={gameQuery.platform}
                 onSelectPlatform={(platform) =>
@@ -58,12 +72,14 @@ function App() {
               />
             </Box>
 
-            <SortSelector
-              onSelectSortOrder={(sortOrder) =>
-                setGameQuery({ ...gameQuery, sortOrder })
-              }
-              sortOrder={gameQuery.sortOrder}
-            />
+            <Box>
+              <SortSelector
+                onSelectSortOrder={(sortOrder) =>
+                  setGameQuery({ ...gameQuery, sortOrder })
+                }
+                sortOrder={gameQuery.sortOrder}
+              />
+            </Box>
           </Flex>
         </Box>
         <GameGrid gameQuery={gameQuery} />
