@@ -1,7 +1,6 @@
 import { Heading, List, ListItem, Spinner } from "@chakra-ui/react";
-import { Genre } from "../hooks/useGenres";
+import useGenres, { Genre } from "../hooks/useGenres";
 import GenreListItem from "./GenreListItem";
-import useData from "../hooks/useData";
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
@@ -9,7 +8,7 @@ interface Props {
 }
 
 const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
-  const { data, error, isLoading } = useData<Genre>("/genres");
+  const { data, error, isLoading } = useGenres();
 
   if (error) return null;
   if (isLoading) return <Spinner />;
