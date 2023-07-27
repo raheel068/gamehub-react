@@ -4,10 +4,10 @@ import GenreListItem from "./GenreListItem";
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
-  selectedGenre: Genre | null;
+  selectedGenreId?: number;
 }
 
-const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
+const GenreList = ({ selectedGenreId, onSelectGenre }: Props) => {
   const { data, error, isLoading } = useGenres();
 
   if (error) return null;
@@ -19,11 +19,11 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
         Genres
       </Heading>
       <List>
-        {data?.results?.map((genre) => (
+        {data?.results.map((genre) => (
           <ListItem key={genre.id} paddingY="5px">
             <GenreListItem
               genre={genre}
-              selectedGenre={selectedGenre}
+              selectedGenreId={selectedGenreId}
               onSelectGenre={(genre) => onSelectGenre(genre)}
             />
           </ListItem>
