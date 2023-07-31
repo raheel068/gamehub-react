@@ -4,17 +4,11 @@ import { isRouteErrorResponse, useRouteError } from "react-router-dom";
 
 const ErrorPage = () => {
   const error = useRouteError();
-  console.log(error);
 
   return (
     <>
       <NavBar />
-      <Flex
-        justifyContent="center"
-        flexDirection="column"
-        alignItems="center"
-        height="100vh"
-      >
+      <Flex flexDirection="column" alignItems="center" height="100vh">
         <Heading as="h1" marginBottom={5}>
           Error
         </Heading>
