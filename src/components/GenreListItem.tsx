@@ -1,5 +1,5 @@
 import { Button, HStack, Image } from "@chakra-ui/react";
-import { Genre } from "../entities/Genre";
+import Genre from "../entities/Genre";
 import useGameQueryStore from "../store";
 import getCroppedImageUrl from "./../services/image-url";
 
