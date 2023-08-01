@@ -28,7 +28,9 @@ const GameDetail = () => {
         <GameAttributes game={game} />
       </Box>
       <Box>
-        <GameTrailer gameId={game.id} />
+        <Box marginBottom={2}>
+          <GameTrailer gameId={game.id} />
+        </Box>
         <GameScreenshots gameId={game.id} />
       </Box>
     </SimpleGrid>
